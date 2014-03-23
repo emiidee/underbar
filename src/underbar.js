@@ -49,9 +49,7 @@ var _ = { };
         iterator(collection[i], i, collection);
       };
     } else {
-      var keys = Object.keys(collection);
-      for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
+      for (var key in collection) {
         iterator(collection[key], key, collection);
       };
     }
