@@ -98,6 +98,13 @@ var _ = { };
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array) {
+    var unique = {};
+
+    _.each(array, function(item){
+      unique[item] = true;
+    });
+
+    return Object.keys(unique);
   };
 
 
