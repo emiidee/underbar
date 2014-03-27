@@ -146,13 +146,13 @@ var _ = { };
     var results =[];
 
     if(typeof(functionOrKey) == 'function'){
-      for (var i = 0; i < collection.length; i++) {
-        results.push(functionOrKey.apply(collection[i], args));
-      };
+      _.each(collection, function(value) {
+        results.push(functionOrKey.apply(value, args));
+      });
     } else {
-      for (var i = 0; i < collection.length; i++) {
-        results.push(collection[i][functionOrKey].apply(collection[i], args));
-      };
+      _.each(collection, function(value) {
+        results.push(value[functionOrKey].apply(value, args));
+      });
     };
     
     return results;
